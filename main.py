@@ -50,9 +50,16 @@ def extract_text_from_pdf(file_bytes: bytes) -> str:
 def extract_text_from_image(file_bytes: bytes) -> str:
     try:
         img = Image.open(io.BytesIO(file_bytes))
+        
+        # Optimization: Resize large images to dramatically speed up Tesseract OCR
+        max_dim = 1600
+        if img.width > max_dim or img.height > max_dim:
+            img.thumbnail((max_dim, max_dim), Image.Resampling.LANCZOS)
+            
         img = ImageOps.grayscale(img)
         enhancer = ImageEnhance.Contrast(img)
         img = enhancer.enhance(2.0)
+        
         text = pytesseract.image_to_string(img)
         return text
     except Exception as e:
