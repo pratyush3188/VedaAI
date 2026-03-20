@@ -102,7 +102,7 @@ function App() {
             </div>
 
             {/* Summary Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
               <div className="bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 flex flex-col justify-between transition-colors">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="p-3 bg-blue-100/50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-xl">
@@ -124,17 +124,6 @@ function App() {
                 </div>
                 <div className="text-5xl font-bold text-red-600 dark:text-red-400">
                   {criticalCases}
-                </div>
-              </div>
-
-              {/* Informational Card (Optional, for layout balance) */}
-              <div className="hidden lg:flex bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl shadow-sm p-6 flex-col justify-between text-white">
-                <div className="mb-4">
-                  <h3 className="text-lg font-medium text-blue-100">System Status</h3>
-                </div>
-                <div>
-                  <div className="text-2xl font-bold">VedaAi Active</div>
-                  <p className="text-blue-200 text-sm mt-1">All monitoring systems nominal</p>
                 </div>
               </div>
             </div>
