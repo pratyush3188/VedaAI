@@ -1,4 +1,5 @@
-import React, { useRef } from 'react';
+import {useRef } from 'react'
+
 import type { Patient } from '../types';
 import { AlertTriangle, Download, FileText, ArrowLeft, Activity, User, Stethoscope, HeartPulse, Building2 } from 'lucide-react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, LineChart, Line, CartesianGrid } from 'recharts';
