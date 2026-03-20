@@ -13,9 +13,9 @@ from groq import Groq
 
 
 
-if os.name == 'nt':  # Windows (local)
+if os.name == 'nt':  # Windows local
     pytesseract.pytesseract.tesseract_cmd = r'C:\Users\psvt2\AppData\Local\Programs\Tesseract-OCR\tesseract.exe'
-else:  # Linux (Render server)
+else:  # Linux Render Docker
     pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 # Load environment variables
