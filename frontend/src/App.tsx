@@ -34,7 +34,8 @@ function App() {
     setError(null);
     try {
       const endpoint = type === 'file' ? '/api/analyze-file' : '/api/analyze-text';
-      const response = await axios.post(`http://127.0.0.1:8000${endpoint}`, formData, {
+      const baseUrl = import.meta.env.VITE_API_URL || 'https://vedaai-backend-nhad.onrender.com';
+      const response = await axios.post(`${baseUrl}${endpoint}`, formData, {
         headers: type === 'file' ? { 'Content-Type': 'multipart/form-data' } : { 'Content-Type': 'application/json' }
       });
       
