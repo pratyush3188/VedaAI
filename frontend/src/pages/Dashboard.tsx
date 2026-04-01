@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuthStore } from '../store/useAuthStore';
 import { supabase } from '../lib/supabase';
-import { Heart, Droplet, Hexagon, Component, CheckCircle, PlusCircle, Clock, MessageSquare, ChevronRight, Activity, Lightbulb, Trophy, Shield, Star, Award, Zap } from 'lucide-react';
+import { Hexagon, CheckCircle, PlusCircle, Clock, ChevronRight, Activity, Lightbulb, Trophy, Shield, Star, Award, Zap } from 'lucide-react';
 import { AreaChart, Area, XAxis, Tooltip, ResponsiveContainer, Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis } from 'recharts';
 import type { ReportRecord } from '../types';
 import { Link } from 'react-router-dom';
