@@ -41,3 +41,19 @@ export interface Patient {
   reportData?: APIResponse;
   dateStr: string;
 }
+
+export interface ReportRecord {
+  id: string;
+  user_id: string;
+  file_name: string;
+  file_type: string;
+  report_type: string;
+  doctor_name: string;
+  symptoms: string;
+  original_pdf_url: string;
+  simplified_text: string;
+  health_score: number;
+  status: string;
+  created_at: string;
+  pinned: boolean;
+}
