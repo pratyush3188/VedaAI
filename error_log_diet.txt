@@ -1,0 +1,24 @@
+Diet Error: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01km2w0t1hf69sy6gfq2kkqhgb` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99651, Requested 1697. Please try again in 19m24.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
+Traceback (most recent call last):
+  File "C:\Users\Lenovo\OneDrive\Desktop\Veda_ai\VedaAI\main.py", line 249, in generate_diet
+    completion = client.chat.completions.create(
+        model="llama-3.3-70b-versatile",
+    ...<5 lines>...
+        response_format={"type": "json_object"}
+    )
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\groq\resources\chat\completions.py", line 461, in create
+    return self._post(
+           ~~~~~~~~~~^
+        "/openai/v1/chat/completions",
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<45 lines>...
+        stream_cls=Stream[ChatCompletionChunk],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\groq\_base_client.py", line 1280, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\groq\_base_client.py", line 1067, in request
+    raise self._make_status_error_from_response(err.response) from None
+groq.RateLimitError: Error code: 429 - {'error': {'message': 'Rate limit reached for model `llama-3.3-70b-versatile` in organization `org_01km2w0t1hf69sy6gfq2kkqhgb` service tier `on_demand` on tokens per day (TPD): Limit 100000, Used 99651, Requested 1697. Please try again in 19m24.672s. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing', 'type': 'tokens', 'code': 'rate_limit_exceeded'}}
